@@ -1,5 +1,7 @@
-/*******************************
-************CSS Resets *********/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -45,48 +47,6 @@ table {
 	border-spacing: 0;
 }
 
-/*******************************
-********** MAIN CSS ***********/
-
-:root {
-	--bg-primary: #4e5266;
-	--bg-secondary: #575B72;
-	--color-primary: #4cabb1;
-	--color-secondary: #69c7ad;
-	--color-tertiary: #fed586;
-	--font: 'Raleway', sans-serif;
-	--text-color: #434b56;
-	--heading-color: #fff;
-	font-size: 16px;
-}
-body {
-	font-family: var(--font);
-	line-height: 1.5;
-	color: var(--text-color);
-}
-
-/******* Base CSS *******/
-*, *:before, *:after {
-	box-sizing: border-box;
-}
-a {
-	text-decoration: none;
-	color: #fff;
-}
-button {
-	border: 0;
-	cursor: pointer;
-}
-button:focus {
-	outline: 0;
-}
-input {
-	border: 0;
-	margin: 0;
-}
-input:focus {
-	outline: 0;
-}
 /***** Heading Elements ******/
 h1 {
 	font-size: 3rem;
@@ -135,6 +95,8 @@ h6 {
 }
 .img-responsive {
 	width: 100%;
+	background: transparent;
+	opacity: 1;
 }
 
 /* Grid */
@@ -155,7 +117,7 @@ h6 {
 }
 .col-4 {
 	width: 33.3333%;
-	float: left;
+	float: right;
 }
 .col-5 {
 	width: 41.6667%;
@@ -189,23 +151,6 @@ h6 {
 	width: 100%;
 	float: left;
 }
-/* wrapper */
-.wrapper {
-	max-width: 1150px;
-	width: 100%;
-	margin: 0 auto;
-	padding: 20px;
-	text-align: center;
-}
-.submit-btn {
-	background: var(--color-primary);
-	color: #fff;
-	text-transform: uppercase;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 30px;
-	padding: 12px 30px;
-}
-
 /******* Clearfix *****/
 .clearfix:before, .clearfix:after {
 	content: '';
@@ -218,198 +163,127 @@ h6 {
 	*zoom: 1;
 }
 
-/********Header Styles******/
-.banner {
-	background: url("./../media/banner.jpg") center;
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-	color: white;
+/*=============MAIN CSS 4 UFC ==============*/
+
+body {
+	font-family:"Arial Narrow",Arial,sans-serif;
+	font-size: 16px;
 }
-.header {
-	max-width: 1300px;
+.hero {
+	background: url("./../media/londonhero.jpg") no-repeat center center;
+
+	height: 100vh ;
+}
+ul {
+	list-style-type: none;
+}
+.heading {
+	padding-top: 2rem;
+}
+.nav-heading {
+	display: inline-flex;
+	background: #ffffff;
+	max-width: 1100px;
 	width: 100%;
 	margin: 0 auto;
-	padding: 2rem;
+	display:flex; 
 }
-.nav-head {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	/* padding: 10px 0px; */
-	/* font-size: inherit; */
-	/* text-rendering: auto; */
+.left_menu_items{
+	padding-left: 20px;
 }
-.nav-head a {
-	color: white;
+.right_menu_items {
+	padding-left: 3rem;
 }
-.nav-head h1 {
-	font-family: 'Source Sans Pro', sans-serif;
+
+ .menu_items {
+	font-size: 1rem;
+	display: inline-flex;
+	padding-bottom: 1.10rem;
+	padding-top: 1.10rem;
+	font-weight: 900;
+	padding-right: 1.15rem;
+
 }
-.nav-head li {
-  display: inline-block;
-	margin: 0px 20px;
-}
-.nav-head .active {
-	color: #ff4c4c;
-}
-.nav-head a:hover {
-	color: #FF4C4C;
-  border-radius: 5px;
+.main-menu {
+	width: 290px;
+	text-align: center;
+} 
+.menu_items:hover {
+	color: rgba(201, 17, 17, 0.918);
 	cursor: pointer;
-	transition-property: color;
-	transition-duration: 1s;
-	/* transition-delay: 1.5s; */
-  transition-timing-function: linear, ease-in;	
+	font-weight: 900;
+	border-bottom: 2px solid  rgba(201, 17, 17, 0.918);
 }
-.h1-logo {
-	font-size: 2.0rem;
+.hero-headline {
+	position: relative ;
+	top: 35vh ;
+	color: white;
+	font-style: bold;
 }
-.nav__menu {
-	@extend .nav;
+.hero-headline-prefix {
+	font-size: 2.5rem;
+	font-weight: 900;
 }
-.nav__link {
-	font-size: 0.9rem;
-	font-weight: bold;
-	/* font-style: bold; */
-	/* margin-left: 2rem; */
-	transition: all 200ms ease-in-out;
+.hero-headline-large-text {
+	font-weight: 900;
+	font-size: 5rem;
+	font-style: bold;
+	font-family: serif;
 }
-#toggle, .label {
-	display: none;
+/* EVENTS INFORMATION */
+
+.inner-box {
+	width: 300px;
+	/* height: 00px; */
+	display:inline-grid;
 }
-/*Dropdown*/
-.drop-link {
+.--is-Event-Container {
+	display: grid;
+	grid-template-areas: "one two three four";
+	padding: 30px 0px;
+}
+.--is-Event-Container:hover{
+	box-shadow: 2px 2px 15px 2px #ccc,-2px -2px 15px 2px#ccc;
+
+}
+#img-1 {
 	position: relative;
+	right: -70px;
 }
-.drop-box {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: 1;
-	/* padding-top: 20px; */
+svg {
+	padding: 40px 0;
+	padding-left: 60px;
 }
-.drop-menu {
-	background:#ffffff;
-	border-radius: 6px;
-	padding: 20px 20px;
-	text-align: left;
-	width: 180px;
-	display: none;
-}
-.drop-menu li {
-	display: block;
-	/* padding-left: 1rem; */
-	margin: 0;
-}
-.drop-menu li a {
-	display: block;
-	background: none;
-	padding: 0.5rem 1rem;
-	margin: 10px 0px;
+a {
+	text-decoration: none;
 	color: black;
-	font-family: 'Source Sans Pro', sans-serif;
 }
-.drop-link:hover .drop-menu {
-	display: block;
+.result__actions {
+	padding: 20px 0px;
 }
-.drop-menu li a:hover {
-	background: none;
-	color: #FF4C4C;
-	background: #F8F9FA;
+.result__actions__text {
+	height: 60px;
+	width: 175px;
+	border: 1px;
+	font-size: 1.25rem;
+	padding: 20px 10px;
 }
-/* Banner-info */
-.banner-info {
-	padding: 4em 0 0em 3em;
-	width: 38%;
+.result__headline {
+	padding-top: 30px;
+	line-height: 10px;
+	font-size: 30px;
+	font-weight: 700;
 }
-.banner-buttons {
-	padding-bottom: 12rem;
+.result__date {
+	font-weight: 700;
+	font-size: 14px;
 }
-
-.banner-info p {
-	color: #fff;
-	font-size: 0.8em;
-	letter-spacing: 1.0;
-	font-weight: 400;
-	margin: 0;
-	text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
+.field__item {
+	font-size: 16px;
+	font-family: Arial, sans-serif;
 }
-.banner-info h3 {
-	font-size: 3.5em;
-	letter-spacing: 1.0;
-	text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
-	margin-bottom:  1.5rem;
-}
-.banner-info .btn {
-	padding: 11px 31px;
-	border-radius: 0px;
-	font-weight: 600;
-	box-shadow: 2px 2px 30px 0px rgba(0, 0, 0, 0.5);
-	color:#ff4c4c;
-	background: #ffffff;
-}
-.banner-info .read-btn {
-	background: #10A6FB;
-	color: #f7f7f7;
-}
-.secondry-heading {
-	background: rgb(230, 227, 227);
-}
-
-/********RESPONSIVE*****/
-/* STYLE FOR HAMBURGER */
-	
-@media screen and (max-width: 992px) {
-	
-}
-
-@media screen and (max-width: 768px) {
-	.label {
-		display: block;
-	}
-	#toggle:checked ~ .nav__menu {
-		display: block;
-	}
-	.nav__menu {
-		display: flex;
-		/* flex-direction: column; */
-		position: absolute;
-		right: 1.0rem;
-		margin-left: 1rem;
-		/* left: auto; */
-		top: 3.5rem;
-		display: none;
-		background: rgba(16, 16, 16, 0.85);
-		padding: 20px;
-	}
-	.nav__link {
-		margin-left: 0;
-		margin-bottom: 3rem;
-		display: block;
-	}
-	
-	footer {
-		height: 100%;
-		margin: 0.625rem 0;
-		padding: 0;
-	}
-	iframe {
-		width: auto;
-	}
-}
-
-@media all and (max-width: 630px) {
-	.banner-buttons {
-		padding-top: 1rem;
-		padding-bottom: 3rem;
-		margin-top: 20px;
-	}
-	 .banner-info h3 {
-		font-size: 3.0rem;
-	}
-	.banner-info .read-btn {
-		background: #10A6FB;
-		color: #f7f7f7;
-	} 
-	
+.result__actions__text:hover {
+	cursor: pointer;
+	transition: border-bottom 0.6s linear;
+	border-bottom: 2px solid  rgba(201, 17, 17, 0.918);
 }
